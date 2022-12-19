@@ -23,4 +23,8 @@ Route::get('category/{category:category_slug}', [CategoryController::class, 'sho
 Route::get('login', [AdminController::class,'login'])->name('login');
 Route::post('login', [AdminController::class,'store']);
 
-Route::get('admin', [AdminController::class,'home'])->middleware('auth');
+Route::middleware('auth')->group(function ()
+{
+	Route::get('admin', [AdminController::class,'home'])->middleware('auth');
+	Route::get('admin/delete/{id:id}', [AdminController::class,'remove'])->middleware('auth');
+});

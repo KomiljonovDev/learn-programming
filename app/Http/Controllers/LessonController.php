@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class LessonController extends Controller
 {
     protected $guarded = [];
-
+    protected $fillable = ['category_id'];
     public function index()
     {
         $lessons = DB::table('lessons')
@@ -26,6 +26,8 @@ class LessonController extends Controller
     }
     public function showLesson(Lesson $lesson)
     {
+        $lesson->view_count +=1;
+        $lesson->save();
         return view('lesson.show-lesson',[
             'lesson'=>$lesson,
             'category'=>Category::find($lesson->category_id)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -29,6 +30,14 @@ class AdminController extends Controller
     }
     public function home()
     {
-        return view('admin.home');
+
+        return view('admin.home',[
+            'lessons'=>Lesson::all()
+        ]);
+    }
+    public function remove(Lesson $id)
+    {
+        Lesson::where('id',$id->id)->delete();
+        return redirect('/admin');
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('lesson_slug')->unique();
             $table->text('body');
+            $table->integer('view_count')->default(1);
             $table->timestamps();
         });
     }
