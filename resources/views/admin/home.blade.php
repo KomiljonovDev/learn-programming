@@ -1,13 +1,7 @@
 <x-layout>
 	<div class="container" style="min-height: 100vh;">
 		<div class="row py-4">
-			<div class="col-md-2">
-				<h6>Havolalar:</h6>
-				<ul>
-					<li><a href="admin/create" class="{{ request()->is('admin/create') ? 'text-primary' : 'mode' }}">Yangi dars yozish.</a></li>
-					<li><a href="admin" class="{{ request()->is('admin') ? 'text-primary' : 'mode' }}">Darslar ro'yxati.</a></li>
-				</ul>
-			</div>
+			<x-menu />
 			<div class="col py-2">
 				<table class="table mode">
 					<thead>

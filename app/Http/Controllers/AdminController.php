@@ -40,4 +40,8 @@ class AdminController extends Controller
         Lesson::where('id',$id->id)->delete();
         return redirect('/admin');
     }
+    public function create()
+    {
+        return view('admin.create');
+    }
 }
