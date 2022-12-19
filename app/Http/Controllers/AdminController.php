@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Category;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class AdminController extends Controller
@@ -40,12 +42,33 @@ class AdminController extends Controller
         Lesson::where('id',$id->id)->delete();
         return redirect('/admin');
     }
-    public function create()
+    public function createCategory()
     {
-        return view('admin.create');
+        return view('admin.create-category');
+    }
+    public function createLesson()
+    {
+        return view('admin.create-lesson');
+    }
+    public function storeCategory()
+    {
+        $attributes = request()->validate([
+            'name'=>'required',
+            'category_slug'=>['required', Rule::unique('categories', 'category_slug')],
+        ]);
+        $attributes['description'] = request('description');
+        Category::create($attributes);
+        return redirect('/admin');
     }
     public function storeLesson()
     {
-        dd(request()->all());
+        $attributes = request()->validate([
+            'title'=>'required',
+            'lesson_slug'=>['required', Rule::unique('lessons', 'lesson_slug')],
+            'body'=>'required',
+            'category_id'=>['required', Rule::exists('categories', 'id')],
+        ]);
+        Lesson::create($attributes);
+        return redirect('/admin');
     }
 }

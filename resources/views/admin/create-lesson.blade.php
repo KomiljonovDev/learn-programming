@@ -5,18 +5,38 @@
 		<div class="row py-4">
 			<x-menu />
 			<div class="col">
-				<form action="create" method="POST">
+				<form action="create-lesson" method="POST">
 					@csrf
 
-					<textarea name="body" id="content"></textarea>
+					<label for="category" class="form-label">Kategoriyani tanlang</label>
+					<select id="category" name="category_id" class="form-control my-3 mode" required>
+						@foreach(\App\Models\Category::all() as $category)
+							<option value="{{ $category->id }}">{{ $category->name }}</option>
+						@endforeach
+					</select>
+					<x-form.error name="category_id"/>
+
+					<label for="title" class="form-label">Dars sarlavhasi</label>
+					<input id="title" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="title">
+					<x-form.error name="title"/>
+					
+					<label for="title" class="form-label">Dars slug</label>
+					<input id="slug" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="lesson_slug">
+					<x-form.error name="lesson_slug"/>
+					
+					<label for="lessonBody" class="form-label">Dars matnini kiring</label>
+					<textarea name="body" id="lessonBody" required></textarea>
+					<x-form.error name="body"/>
+					
 					<button type="submit" class="btn btn-success my-2">Darsni yuklash</button>
 				</form>
 			</div>
 		</div>
 	</div>
+	<x-auto-slug-editor />
 	<script>
     	tinymce.init({ 
-	        selector: '#content', 
+	        selector: '#lessonBody', 
 	        image_class_list: [{ 
 	            title: 'img-fluid', 
 	            value: 'img-fluid' 
