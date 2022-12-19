@@ -44,4 +44,8 @@ class AdminController extends Controller
     {
         return view('admin.create');
     }
+    public function storeLesson()
+    {
+        dd(request()->all());
+    }
 }

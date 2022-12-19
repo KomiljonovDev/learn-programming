@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function ()
 	Route::get('admin', [AdminController::class,'home'])->middleware('auth');
 
 	Route::get('admin/create', [AdminController::class,'create'])->middleware('auth');
+	Route::post('admin/create', [AdminController::class,'storeLesson'])->middleware('auth');
 
 	Route::get('admin/delete/{id:id}', [AdminController::class,'remove'])->middleware('auth');
 });
