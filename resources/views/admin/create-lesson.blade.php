@@ -1,5 +1,4 @@
 <x-layout>
-	<script type="text/javascript" src="../js/prism.js"></script>
 	<script type="text/javascript" src="../js/tinymce/tinymce.min.js"></script>
 	<div class="container" style="min-height: 100vh;">
 		<div class="row py-4">
@@ -17,11 +16,11 @@
 					<x-form.error name="category_id"/>
 
 					<label for="title" class="form-label">Dars sarlavhasi</label>
-					<input id="title" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="title">
+					<input id="title" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="title" value="{{ old('title') }}">
 					<x-form.error name="title"/>
 					
 					<label for="title" class="form-label">Dars slug</label>
-					<input id="slug" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="lesson_slug">
+					<input id="slug" type="text" class="form-control my-3 mode" placeholder="Foydalanuvchi nomi" required name="lesson_slug" value="{{ old('lesson_slug') }}">
 					<x-form.error name="lesson_slug"/>
 					
 					<label for="lessonBody" class="form-label">Dars matnini kiring</label>

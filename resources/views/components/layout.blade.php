@@ -14,10 +14,10 @@
 			padding: 0;
 			box-sizing: border-box;
 		}
-		/*.mode{
+		.mode{
 			background-color: #232529;
 			color: white;
-		}*/
+		}
 		.navbar-home{
 			font-size: 27px;
 			text-transform: uppercase;
@@ -25,6 +25,12 @@
 		}
 		a{
 			text-decoration: none;
+		}
+		.lesson-category{
+			color: inherit;
+		}
+		.lesson-category:hover{
+			color: #e3796a;
 		}
 		.brand{
 			text-decoration: none;
@@ -76,6 +82,9 @@
 		.border-bottom-gray{
 			border-bottom: 1px solid gray;
 			border-radius: 3px;
+		}
+		.font-size-13{
+			font-size: 13px;
 		}
 	</style>
 </head>

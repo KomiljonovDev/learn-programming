@@ -8,12 +8,12 @@
 
 					<div class="mb-3">
 						<label for="name" class="form-label">Kategoriya nomi</label>
-						<input type="name" class="form-control mode" id="name" placeholder="Foydalanuvchi nomi" required name="name">
+						<input type="name" class="form-control mode" id="name" placeholder="Foydalanuvchi nomi" required name="name" value="{{ old('name') }}">
 						<x-form.error name="name"/>
 					</div>
 					<div class="mb-3">
 						<label for="slug" class="form-label">Kategoriya slug</label>
-						<input type="slug" class="form-control mode" id="slug" placeholder="Foydalanuvchi nomi" required name="category_slug">
+						<input type="slug" class="form-control mode" id="slug" placeholder="Foydalanuvchi nomi" required name="category_slug"  value="{{ old('category_slug') }}">
 						<x-form.error name="category_slug"/>
 					</div>
 					<div class="mb-3">

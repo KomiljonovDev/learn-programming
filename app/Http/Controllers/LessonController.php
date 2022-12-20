@@ -33,4 +33,10 @@ class LessonController extends Controller
             'category'=>Category::find($lesson->category_id)
         ]);
     }
+    public function searchLesson()
+    {
+        return view('components.search',[
+            'lessons'=>Lesson::latest()->filter([request('search')])->Paginate(18)->withQueryString()
+        ]);
+    }
 }
