@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [LessonController::class, 'index']);
 Route::get('lesson/{lesson:lesson_slug}', [LessonController::class, 'showLesson']);
 Route::get('category/{category:category_slug}', [CategoryController::class, 'showCategories']);
+
 Route::get('search/', [LessonController::class, 'searchLesson']);
 
 Route::get('login', [AdminController::class,'login'])->name('login');

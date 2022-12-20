@@ -35,8 +35,10 @@ class LessonController extends Controller
     }
     public function searchLesson()
     {
+        $result = request('query') ? Lesson::where('title', 'like', '%' . request('query') . '%')
+            ->orWhere('body', 'like', '%' . request('query') . '%')->get() : [];
         return view('components.search',[
-            'lessons'=>Lesson::latest()->filter([request('search')])->Paginate(18)->withQueryString()
+            'lessons'=>$result
         ]);
     }
 }

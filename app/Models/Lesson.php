@@ -10,15 +10,9 @@ class Lesson extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    // protected $with = ['category'];
-
-    public static function scopeFilter($query, $filters)
+    
+    public function category()
     {
-        $query->when($filters['query'] ?? false, fn ($query, $search) => $query->where('title', 'like', '%' . $search . '%')
-            ->orWhere('body', 'like', '%' . $search . '%')
-        );
-
-        $query->when($filters['category'] ?? false, fn ($query, $search) => $query->whereHas('category',fn ($query, $search) => $query->where('name', 'like', '%' . $search . '%')->orWhere('description', 'like', '%' . $search . '%'))
-        );
+        return $this->belongsTo(Category::class);
     }
 }

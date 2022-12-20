@@ -21,30 +21,15 @@
 		<div class="row">
 			<div class="col">
 				<ol class="mx-2">
-					<li class="mx-2">
-						<div class="mx-3">
-							<h5>
-								<a href="" class="links">PHP ga kirish</a>
-							</h5>
-							<div class="w-75">
-								<p>PHP dasturlash tili bilan tanishish. php o'zi nima va qaysi yo'nalishlarda ishlatiladi,kabi savollarga javob topishingiz mumkin.</p>
-								<a href="" class="font-size-13 links">sdcsd</a>
-								<span class="text-gray"> / </span>
-								<a href="" class="font-size-13 links">sdcsd</a>
-							</div>
-						</div>
-					</li>
 					@foreach($lessons as $lesson)
-					<li class="mx-2">
+					<li class="mx-2 py-2">
 						<div class="mx-3">
 							<h5>
-								<a href="" class="links">PHP ga kirish</a>
+								<a href="/lesson/{{ $lesson->lesson_slug }}" class="links">{{ $lesson->title }}</a>
 							</h5>
 							<div class="w-75">
-								<p>{{ $lesson }}</p>
-								<a href="" class="font-size-13 links">sdcsd</a>
-								<span class="text-gray"> / </span>
-								<a href="" class="font-size-13 links">sdcsd</a>
+								<p>{!! $lesson->body !!}</p>
+								Kategoriya: <a href="category/{{ $lesson->category->category_slug }}" class="font-size-13 links">{{ $lesson->category->name }}</a>
 							</div>
 						</div>
 					</li>
