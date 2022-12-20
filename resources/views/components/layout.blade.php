@@ -15,8 +15,16 @@
 			box-sizing: border-box;
 		}
 		.mode{
+			/*background-color: #232529;
+			color: white;*/
+		}
+		.modeDark{
 			background-color: #232529;
 			color: white;
+		}
+		.modeLight{
+			background-color: white;
+			color: black;
 		}
 		.navbar-home{
 			font-size: 27px;
@@ -49,7 +57,16 @@
 			list-style: none;
 		}
 		.bg-gray-11{
-			background-color: #292c31;
+			background-color: rgba(247, 244, 243, 0.9);
+		}
+		.bg-gray-11:hover{
+			transition: all 0.2s;
+			background-color: rgba(247, 244, 243, 1);
+			text-decoration: none;
+		}
+		.contact-link-color{
+			color: #e3796a;
+			text-decoration: none;
 		}
 		.color-46{
 			color: #e3796a;;
@@ -76,7 +93,7 @@
 			border-top: 3px solid #35383f;
 		}
 		.border-gray{
-			border: 1px solid gray;
+			border: 1px solid rgba(247, 244, 243, 0.9);
 			border-radius: 5px;
 		}
 		.border-bottom-gray{
@@ -96,21 +113,21 @@
 					<li class="col text-left li-style-none">
 						<a href="/" class="brand mode">php - komiljonovdev.uz</a>
 					</li>
-					<li class="li-style-none mx-5">
+					<!-- <li class="li-style-none mx-5">
 						<a href="#" class="mode">
 							<i class="fas fa-user"></i>
 						</a>
-					</li>
+					</li> -->
 					<li class="li-style-none mx-5">
-						<a href="#" class="mode">
+						<a href="#" class="mode" id="mode">
 							<i class="fa-regular fa-moon"></i>
 						</a>
 					</li>
-					<li class="li-style-none mx-5">
+					<!-- <li class="li-style-none mx-5">
 						<a href="#" class="mode">
 							<i class="fas fa-search"></i>
 						</a>
-					</li>
+					</li> -->
 				</ul>
 			</nav>
 		</div>
@@ -128,5 +145,37 @@
 			</footer>
 		</div>
 	</div>
+	<script type="text/javascript">
+		let getMode = localStorage.getItem('mode'),
+			modeIcon = document.querySelector('.fa-moon') ?? document.querySelector('.fa-sun'),
+			changeMode = document.getElementById('mode'),
+			mode = document.querySelectorAll('.mode');
+		if (getMode == 'dark') {
+			modeIcon.classList.remove('fa-moon');
+			modeIcon.classList.add('fa-sun');
+			mode.forEach(function (item) {
+				item.classList.add('modeDark')
+			});
+		}
+		changeMode.addEventListener('click',function () {
+			getMode = localStorage.getItem('mode');
+			modeIcon = document.querySelector('.fa-moon') ?? document.querySelector('.fa-sun');
+			if (getMode == 'dark') {
+				mode.forEach(function (item) {
+					item.classList.remove('modeDark')
+				});
+				modeIcon.classList.remove('fa-sun');
+				modeIcon.classList.add('fa-moon');
+				localStorage.setItem('mode', 'light');
+			}else{
+				mode.forEach(function (item) {
+					item.classList.add('modeDark')
+				});
+				modeIcon.classList.remove('fa-moon');
+				modeIcon.classList.add('fa-sun');
+				localStorage.setItem('mode', 'dark');
+			}
+		});
+	</script>
 </body>
 </html>

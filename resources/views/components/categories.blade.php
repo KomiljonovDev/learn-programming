@@ -1,5 +1,5 @@
 <x-layout>
-	<div class="container">
+	<div class="container"  style="min-height: 90vh;">
 		<div class="row py-3">
 			<div class="col">
 				<a href="/" class="links">

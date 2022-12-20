@@ -1,7 +1,7 @@
 <x-layout>
-	<div class="container">
+	<div class="container"  style="min-height: 100vh;">
 		<div class="row py-3">
-			<div class="col">
+			<div class="col min-height">
 				<a href="/" class="links">
 					<i class="fas fa-home"></i>
 				</a> 

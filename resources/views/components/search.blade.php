@@ -1,5 +1,5 @@
 <x-layout>
-	<div class="container">
+	<div class="container" style="min-height: 90vh;">
 		<div class="row py-3">
 			<div class="col">
 				<div class="">
@@ -21,19 +21,23 @@
 		<div class="row">
 			<div class="col">
 				<ol class="mx-2">
-					@foreach($lessons as $lesson)
-					<li class="mx-2 py-2">
-						<div class="mx-3">
-							<h5>
-								<a href="/lesson/{{ $lesson->lesson_slug }}" class="links">{{ $lesson->title }}</a>
-							</h5>
-							<div class="w-75">
-								<p>{!! $lesson->body !!}</p>
-								Kategoriya: <a href="category/{{ $lesson->category->category_slug }}" class="font-size-13 links">{{ $lesson->category->name }}</a>
+					@if($lessons->count())
+						@foreach($lessons as $lesson)
+						<li class="mx-2 py-2">
+							<div class="mx-3">
+								<h5>
+									<a href="/lesson/{{ $lesson->lesson_slug }}" class="links">{{ $lesson->title }}</a>
+								</h5>
+								<div class="w-75">
+									<p>{!! $lesson->body !!}</p>
+									Kategoriya: <a href="category/{{ $lesson->category->category_slug }}" class="font-size-13 links">{{ $lesson->category->name }}</a>
+								</div>
 							</div>
-						</div>
-					</li>
-					@endforeach
+						</li>
+						@endforeach
+					@else
+						<h3>Qidiruv bo'yicha natija topilmadi</h3>
+					@endif
 				</ol>
 			</div>
 		</div>
