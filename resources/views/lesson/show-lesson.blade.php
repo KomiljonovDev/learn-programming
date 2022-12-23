@@ -16,7 +16,7 @@
 			</div>
 			<div class="col">
 				<div class="float-right color-46">
-					<i class="fa-solid fa-calendar-days"></i> {{ $lesson->updated_at->diffForHumans() }}
+					<i class="fa-solid fa-calendar-days"></i> {{ $lesson->created_at->diffForHumans() }}
 				</div>
 			</div>
 		</div>
