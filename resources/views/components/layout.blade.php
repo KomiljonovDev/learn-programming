@@ -103,13 +103,23 @@
 		.font-size-13{
 			font-size: 13px;
 		}
+		@media screen and (max-width:360px){
+			.nav-home{
+				display: block!important;
+				padding: 0;
+			}
+			.modeIcon{
+				margin: 13px!important;
+				padding: 0!important;
+			}
+		}
 	</style>
 </head>
 <body>
 	<div class="mode">
 		<div>
 			<nav class="navbar-home">
-				<ul class="d-flex py-2">
+				<ul class="d-flex py-2 nav-home">
 					<li class="col text-left li-style-none">
 						<a href="/" class="brand mode">php - komiljonovdev.uz</a>
 					</li>
@@ -118,7 +128,7 @@
 							<i class="fas fa-user"></i>
 						</a>
 					</li> -->
-					<li class="li-style-none mx-5">
+					<li class="li-style-none mx-5 modeIcon">
 						<a href="#" class="mode" id="mode">
 							<i class="fa-regular fa-moon"></i>
 						</a>

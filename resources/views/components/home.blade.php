@@ -14,23 +14,12 @@
 			<div class="col">
 				<div class="py-2 text-capitalize">
 					<h5 class="d-flex justify-content-center">ishlab chiquvchi bilan aloqa</h5>
-					<div class="d-flex justify-content-center py-2">
-						<div>
-							<a href="" class="col py-2 px-5 mx-2 bg-gray-11 color-46 border-gray contact-link-color">
-								<i class="fa-brands fa-github "></i> github
-							</a>
-							<a href="" class="col py-2 px-5 mx-2 bg-gray-11 color-46 border-gray contact-link-color">
-								<i class="fa-brands fa-telegram"></i> Telegram
-							</a>
-						</div>
+					<div class="text-center">
+						<a href="https://github.com/komiljonovdev" class="btn btn-success" target="_blank" ><i class="fa-brands fa-github "></i> Github</a>
+						<a href="https://t.me/komiljonovdev" class="btn btn-success" target="_blank" ><i class="fa-brands fa-telegram"></i> Telegram</a>
+						<a href="https://komiljonovdev.uz" class="btn btn-success" target="_blank"><i class="fas fa-globe"></i> komiljonovdev.uz</a>
 					</div>
-					<div class="d-flex justify-content-center py-2">
-						<div class="py-2">
-							<a href="" class="col py-2 px-5 mx-2 bg-gray-11 color-46 border-gray contact-link-color">
-								<i class="fas fa-globe"></i> komiljonovdev.uz
-							</a>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
