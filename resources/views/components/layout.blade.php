@@ -112,6 +112,9 @@
 				margin: 13px!important;
 				padding: 0!important;
 			}
+			.footer-content{
+				display: block!important;
+			}
 		}
 	</style>
 </head>
@@ -145,7 +148,7 @@
 		<div>
 			<footer class="footer">
 				<div class="px-5 py-2">
-					<ul class="d-flex">
+					<ul class="d-flex footer-content">
 						<li class="li-style-none px-2 mode">&copy; 2022 &nbsp; Komiljonov Obidjon <span class="text-gray"> | </span></li>
 						<li class="li-style-none px-2"><a href="">Ushbu loyiha haqida</a> <span class="text-gray"> | </span></li>
 						<li class="li-style-none px-2"><a href="">Aloqa</a> <span class="text-gray"> | </span></li>

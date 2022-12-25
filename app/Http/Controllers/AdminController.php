@@ -56,6 +56,7 @@ class AdminController extends Controller
             'name'=>'required',
             'category_slug'=>['required', Rule::unique('categories', 'category_slug')],
         ]);
+        $attributes['description'] = request('description');
         Category::create($attributes);
         return redirect('/admin');
     }
