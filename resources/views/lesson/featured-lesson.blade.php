@@ -1,7 +1,7 @@
 <x-home>
 	@foreach($lessons as $lesson)
-		<div class="row py-2">
-		<div class="col" style="min-height: 60vh;">
+		<div class="row py-2" style="min-height: 60vh;">
+		<div class="col">
 			<h5><a href="/category/{{ $lesson[0]->category_slug }}" class="mode lesson-category">{{ $lesson[0]->name }}</a></h5>
 			<div class="mx-2 py-2">
 				<ol class="mx-2" style="width: 80%;">
